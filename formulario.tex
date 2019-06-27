@@ -1,0 +1,236 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath}    % need for subequations
+\usepackage{hyperref}   % use for hypertext links, including those to external documents and URLs
+\usepackage{esint}
+\usepackage{amsfonts}
+\usepackage[utf8]{inputenc}
+\usepackage{makeidx}
+\usepackage{amsfonts}
+\usepackage{fullpage}
+\usepackage[spanish]{babel}
+
+
+\title{Formulario de ELMG - ETSIT UPM}
+\author{Carlos García-Mauriño}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\twocolumn
+
+\section{Introducción}
+\label{sec:introduccion}
+
+\subsection{Electromagnetismo}
+\label{sub:electromagnetismo}
+
+\subsubsection{Densisdades o distribuciones de corriente}
+\label{ssub:densisdades_o_distribuciones_de_corriente}
+
+\begin{itemize}
+		\item \textbf{Superficiales:}
+				\[ I_{TOT} = \int_L\vec{J_s} \cdot \hat{n} \cdot dl \]
+				\[ \vec{J_s} = \rho_s \cdot \vec{v} \]
+\end{itemize}
+
+\subsubsection{Campo electromagnetico}
+\label{ssub:campo_electromagnetico}
+
+\begin{itemize}
+		\item \textbf{Fuerza de Lorentz}:
+				\[ \vec{F} = q \cdot \vec{E} + q \cdot ( \vec{v} \times \vec{B} ) \]
+		\item \textbf{Vector de Poynting}:
+				\[ \vec{P} = \vec{E} \times \vec{H} \quad \left( \frac{W}{m^2} \right) \]
+\end{itemize}
+
+\subsubsection{Condiciones de contorno}
+\label{ssub:condiciones_de_contorno}
+
+\[ \vec{n}_{12} \cdot ( \vec{D}_2 - \vec{D}_1 ) = \rho_s \]
+
+\subsubsection{Ecuación de continuidad y ley de conservación de la carga}
+\label{ssub:ecuacion_de_continuidad_y_ley_de_conservacion_de_la_carga}
+
+Una corriente estacionaria tiene divergencia 0 al no haber variación temporal.
+
+\[ \nabla \cdot \vec{J_c} + \frac{\partial \rho_v}{\partial t} = 0\]
+
+\section{Electrostática}
+\label{sec:electrostatica}
+
+\subsection{Introducción}
+\label{sub:introduccion}
+
+\begin{itemize}
+		\item No hay varaciación temporal.
+		\item No hay movimiento de cargas $ \vec{J_c} = 0 $ 
+\end{itemize}
+
+\subsubsection{Ecuaciones de Maxwell}
+\label{ssub:ecuaciones_de_maxwell}
+
+\[
+\begin{aligned}
+\nabla\times\vec{E} \quad & = \quad -\frac{\partial\vec{B}}{\partial t},  & \quad \text{(Ley de Ampère)}   \\[5pt]
+\nabla\times\vec{H} \quad & = \quad \vec{J_c} + \frac{\partial\vec{D}}{\partial t},   & \quad \text{(Ley de Faraday)} \\[5pt]
+\nabla\cdot\vec{D} \quad & = \quad \rho_v,  & \quad \text{(Ley de Coulomb)} \\[5pt]
+\nabla\cdot\vec{B} \quad & = \quad 0. & \quad \text{(Ley de Gauss)}
+\end{aligned}
+\]
+
+\subsubsection{Ley de Ohm generalizada}
+\label{ssub:ley_de_ohm_generalizada}
+
+\[ \vec{J_c} = \sigma \cdot \vec{E} \]
+
+\subsection{Potencial eléctrico}
+\label{sub:potencial_electrico}
+
+\[ \vec{E} = - \nabla \phi \]
+\[ \phi = - \int \vec{E} \cdot d \vec{l} \]
+
+\subsection{Cálculo de $ \vec{E} $ y $ \phi $ }
+\label{sub:calculo_de_e_y_phi_}
+
+\subsubsection{Aportaciones infnitesimales}
+\label{ssub:aportaciones_infnitesimales}
+
+\begin{itemize}
+		\item \textbf{Cargas puntuales}:
+				\[ \vec{E}( \vec{r} ) = \frac{q \cdot ( \vec{r} - \vec{r}\,' )}{4 \pi \varepsilon \cdot | \vec{r} - \vec{r}\,' |^3} \quad (V/m) \]
+				\[ \phi ( \vec{r} ) = \frac{q}{4 \pi \varepsilon \cdot | \vec{r} - \vec{r}\,' |} \quad (V) \]
+\end{itemize}
+
+\subsubsection{Ley de Gauss}
+\label{ssub:ley_de_gauss}
+
+\[ \oiint\limits_{S} \vec{D} \cdot d \vec{S} =  Q_{encerrada} \]
+
+\subsubsection{Ley de Poisson para medios homogéneos}
+\label{ssub:ley_de_poisson_para_medios_homogeneos}
+
+\[ \Delta \phi = - \frac{\rho_V}{ \varepsilon } \]
+
+\subsection{Energía y densidad de energía electrostática}
+\label{sub:energia_y_densidad_de_energia_electrostatica}
+
+\[ W_e = \frac{1}{2} \iiint_V \varepsilon \cdot \vec{E}^2 \, dV \quad (J) \]
+
+\subsection{Condensadores}
+\label{sub:condensadores}
+
+\[ C = \frac{Q}{V_0} \quad (F) \]
+
+\subsubsection{Energía almacenada en un condensador}
+\label{ssub:energia_almacenada_en_un_condensador}
+
+\[ W_e = \frac{1}{2} C \cdot V_0^2 = \frac{Q^2}{2 \cdot C} \quad (J) \]
+
+\subsection{Dipolo eléctrico}
+\label{sub:dipolo_electrico}
+
+\[ Q_{total} = 0 \]
+
+\[ \vec{E} ( \vec{r} ) = \frac{1}{4 \pi \varepsilon \cdot r^3} \left[ \frac{3 \cdot ( \vec{p} \cdot \vec{r} ) \cdot \vec{r}}{r^2} - \vec{p} \right] \quad (V/m) \]
+\[ \phi ( \vec{r} ) = \frac{ \vec{p} \cdot \vec{r}}{4 \pi \varepsilon \cdot r^3} \quad (V) \] 
+
+\subsubsection{Calculo de $ \vec{p} $ }
+\label{ssub:calculo_de_p}
+
+\[ \vec{p} = \iiint_{V'} \vec{r}\,' \cdot \rho_{V'} \cdot dV' \quad (C \cdot m) \]
+\[ \vec{p} = q \cdot d \cdot \vec{u}_{-+} \quad (C \cdot m) \]
+
+
+\section{Magnetostática}
+\label{sec:magnetostatica}
+
+\subsection{Potencial vector magnético $ \vec{A} \quad \left( \frac{Wb}{m} \right) $ }
+\label{sub:potencial_vector_magnetico}
+
+En magnetostática cumple:
+
+\[ \vec{B} = \nabla \times \vec{A} \]
+\[ 0 = \nabla \cdot \vec{A} \]
+
+\[ \Delta \vec{A} = - \mu \vec{J} \]
+
+\subsection{Calculo de $ \vec{B} $ }
+\label{sub:calculo_de_b_}
+
+\subsubsection{Ley de Biot-Savart}
+\label{ssub:ley_de_biot_savart}
+
+\[ \vec{B} ( \vec{r} ) = \frac{\mu}{4 \pi} \iiint_{V'} \frac{ \vec{J}_{V'} \times ( \vec{r} - \vec{r}\,' )}{| \vec{r} - \vec{r}\,' |^3} dV' \]
+\[ \vec{B} ( \vec{r} ) = \frac{\mu I}{4 \pi} \cdot \frac{ \vec{dl}\,' \times ( \vec{r} - \vec{r}\,' )}{| \vec{r} - \vec{r}\,' |^3} \]
+
+\subsubsection{Ley de Ampère}
+\label{ssub:ley_de_ampere}
+
+\[ \oint_C \vec{H} \cdot \vec{dl} = I \]
+
+\subsection{Momento dipolar magnético $ \vec{m} $ }
+\label{sub:momento_dipolar_magnetico_m}
+
+Para puntos lejanos:
+
+\[ \vec{B} ( \vec{r} ) = \frac{\mu}{4 \pi r^3} \left[ \frac{3 ( \vec{m} \cdot \vec{r} ) \cdot \vec{r}}{ r^2} - \vec{m} \right] \quad (T) \]
+
+\subsubsection{Cálculo de $ \vec{m} $ }
+\label{ssub:calculo_de_m}
+
+\[ \vec{m} = \frac{1}{2} \iiint_{V'} \left[ \vec{r}\,' \times \vec{J}_{V'} ( \vec{r}\,' ) \right] dV' \]
+\[ \vec{m} = \frac{1}{2} \int_{L'} I \cdot \left( \vec{r}\,' \times \vec{dl}\,' \right) \]
+
+
+\subsection{Condiciones de contorno}
+\label{sub:condiciones_de_contorno}
+
+\[ \vec{n}_{12} \cdot \left.( \vec{J}_2 - \vec{J}_1 ) \right|_S = 0 \]
+
+\subsection{Resistencia}
+\label{sub:resistencia}
+
+\subsubsection{Resistencia asociada a un conductor rectangular}
+\label{ssub:resistencia_asociada_a_un_conductor_rectangular}
+
+\[ R = \frac{V_A - V_B}{I} = \frac{1}{\sigma} \cdot \frac{L}{S} \quad (\Omega) \]
+
+\section{Campos con variación temporal}
+\label{sec:campos_con_variacion_temporal}
+
+\subsection{Ley de Faraday-Lenz}
+\label{sub:ley_de_faraday_lenz}
+
+\[ \oint_C \vec{E} \cdot \vec{dl} = - \frac{\partial \phi_B}{\partial t} \]
+\[ \phi_B = \iint_S \vec{B} \cdot \vec{dS} \quad ( \mbox{Wb} ) \]
+
+\[ \mbox{f.e.m. } = - \frac{\partial \phi_B}{\partial t} \quad ( \mbox{V} ) \]
+
+\subsection{Coeficientes de Inducción}
+\label{sub:coeficientes_de_induccion}
+
+\subsubsection{Coeficiente de autoinducción}
+\label{ssub:coeficiente_de_autoinduccion}
+
+\[ L_{i,j} = \frac{\phi_{B\,i,j}}{I_j} \quad ( \mbox{H} ) \]
+
+\section{Extra}
+\label{sec:extra}
+
+\subsection{Trigonometría}
+\label{sub:trigonometria}
+
+\subsubsection{Teorema del coseno}
+\label{ssub:teorema_del_coseno}
+
+\[ c^2 = a^2 + b^2 - 2ab\cos\gamma \]
+
+\subsection{Física}
+\label{sub:fisica}
+
+\[ F = - \frac{\partial W}{\partial d} \quad ( \mbox{N} ) \]
+
+
+\end{document}
